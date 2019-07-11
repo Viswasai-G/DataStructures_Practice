@@ -21,4 +21,20 @@ public class PrintDuplicate {
         }
 
     }
+    public void printDuplicate_Array(int[] input){
+        HashMap<Integer, Integer> inputMap = new HashMap<>();
+        for(int iter:input){
+            if(inputMap.containsKey(iter)){
+                inputMap.replace(iter, inputMap.get(iter)+1);
+            }
+            else{
+                inputMap.put(iter, 1);
+            }
+        }
+        for(int key:inputMap.keySet()){
+            if(inputMap.get(key)>1){
+                System.out.println("Duplicate element: "+key+" repeated:"+inputMap.get(key)+" times");
+            }
+        }
+    }
 }
