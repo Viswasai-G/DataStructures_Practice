@@ -5,10 +5,13 @@ public class Main {
         System.out.println("This package contains java implementations for common arrays and strings related problems.");
         //Array Duplicates
         String[] arrStr = {"abc","cde","def","abc","def"};
-        int[] arrInt = {1,2,3,4,5,2,4,7,2};
+        Integer[] arrInt = {1,2,3,4,5,2,4,7,2};
         PrintDuplicate obj = new PrintDuplicate();
-        obj.printDuplicate_Array(arrStr);
-        obj.printDuplicate_Array(arrInt);
+        obj.printDuplicate_Generic(arrStr);
+        obj.printDuplicate_Generic(arrInt);
+        obj.printDuplicate_Stream(arrStr);
+        obj.printDuplicate_Stream(arrInt);
+
 
         //String rotation
         CheckRotation rotation = new CheckRotation();
