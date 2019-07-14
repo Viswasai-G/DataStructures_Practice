@@ -16,6 +16,11 @@ public class Main {
         //String rotation
         CheckRotation rotation = new CheckRotation();
         System.out.println(rotation.checkRotate("7765121109","1211097765"));
+
+        //Replace String
+        ReplaceSpaces replaceSpaces = new ReplaceSpaces();
+        String replace = "abc a cc a";
+        System.out.println(replaceSpaces.replaceString(replace));
     }
 
 }
