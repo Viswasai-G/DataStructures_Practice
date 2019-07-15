@@ -21,6 +21,10 @@ public class Main {
         Permutation permutation = new Permutation();
         System.out.println(permutation.isPermutation("abcdef", "adfeba"));
 
+        //Replace String
+        ReplaceSpaces replaceSpaces = new ReplaceSpaces();
+        String replace = "abc a cc a";
+        System.out.println(replaceSpaces.replaceString(replace));
     }
 
 }
