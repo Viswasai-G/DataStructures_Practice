@@ -16,6 +16,11 @@ public class Main {
         //String rotation
         CheckRotation rotation = new CheckRotation();
         System.out.println(rotation.checkRotate("7765121109","1211097765"));
+
+        //String Permutation
+        Permutation permutation = new Permutation();
+        System.out.println(permutation.isPermutation("abcdef", "adfeba"));
+
     }
 
 }
