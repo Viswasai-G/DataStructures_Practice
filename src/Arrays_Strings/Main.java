@@ -15,16 +15,20 @@ public class Main {
 
         //String rotation
         CheckRotation rotation = new CheckRotation();
-        System.out.println(rotation.checkRotate("7765121109","1211097765"));
+        System.out.println("String Rotation should be true: " + rotation.checkRotate("7765121109","1211097765"));
 
         //String Permutation
         Permutation permutation = new Permutation();
-        System.out.println(permutation.isPermutation("abcdef", "adfeba"));
+        System.out.println("Permutation of string should be false: "+permutation.isPermutation("abcdef", "adfeba"));
 
         //Replace String
         ReplaceSpaces replaceSpaces = new ReplaceSpaces();
         String replace = "abc a cc a";
         System.out.println(replaceSpaces.replaceString(replace));
+
+        //Shuffle Cards
+        DeckofCards deckofCards = new DeckofCards();
+        deckofCards.shuffle();
     }
 
 }

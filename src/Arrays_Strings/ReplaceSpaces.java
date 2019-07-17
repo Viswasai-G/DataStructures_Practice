@@ -10,7 +10,6 @@ public class ReplaceSpaces {
 
         //Using an array
         char[] string = str.toCharArray();
-        System.out.println(string);
         for (int i = 0; i <string.length;i++){
             string[i] = str.charAt(i) != ' ' ? str.charAt(i):'%';
         }
