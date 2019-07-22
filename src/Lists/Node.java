@@ -10,6 +10,16 @@ public class Node<T> {
         this.next = next;
     }
 
+    public Node(T data){
+        this.data = data;
+        this.next = null;
+    }
+
+    public Node(){
+        this.data = null;
+        this.next = null;
+    }
+
     public Node getNext() {
         return next;
     }

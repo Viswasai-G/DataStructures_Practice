@@ -1,5 +1,7 @@
 package Arrays_Strings;
 
+import Lists.LinkedList_Impl;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("This package contains java implementations for common arrays and strings related problems.");
@@ -29,6 +31,19 @@ public class Main {
         //Shuffle Cards
         DeckofCards deckofCards = new DeckofCards();
         deckofCards.shuffle();
+
+
+
+        //Linked List impl
+        LinkedList_Impl linkl = new LinkedList_Impl();
+        linkl.add("first node");
+        linkl.add("second");
+        linkl.add("third");
+        linkl.add("fourth");
+        System.out.println(linkl.getHead().getData());
+        System.out.println(linkl.getHead().getNext().getData());
+        System.out.println(linkl.getHead().getNext().getNext().getData());
+        System.out.println(linkl.getHead().getNext().getNext().getNext().getData());
     }
 
 }
