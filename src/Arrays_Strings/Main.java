@@ -36,14 +36,14 @@ public class Main {
 
         //Linked List impl
         LinkedList_Impl linkl = new LinkedList_Impl();
-        linkl.add("first node");
-        linkl.add("second");
-        linkl.add("third");
-        linkl.add("fourth");
-        System.out.println(linkl.getHead().getData());
-        System.out.println(linkl.getHead().getNext().getData());
-        System.out.println(linkl.getHead().getNext().getNext().getData());
-        System.out.println(linkl.getHead().getNext().getNext().getNext().getData());
+        linkl.addToHead("first node");
+        linkl.addToHead("second");
+        linkl.addToTail("third");
+        linkl.addToHead("fourth");
+        linkl.addToTail("fifth");
+        linkl.delete("second");
+        linkl.deleteHead();
+        linkl.printList();
     }
 
 }
