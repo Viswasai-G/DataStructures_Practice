@@ -58,4 +58,13 @@ public class LinkedList_Impl extends Node{
         System.out.println("]");
     }
 
+    public <T> Node search(T data){
+        Node resultnode = head;
+        while(resultnode.getData() != data){
+            resultnode = resultnode.getNext();
+        }
+
+        return resultnode;
+    }
+
 }
