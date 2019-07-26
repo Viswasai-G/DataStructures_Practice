@@ -22,6 +22,25 @@ public class DLinkedList_Impl extends DNode {
         head = new DNode(data, temp, null);
     }
 
+    public <T> void delete(T data){
+        DNode temp = head;
+        if(temp.getData()==data){
+            deleteHead();
+        }
+        else{
+            while(temp.getNext().getData()!= data){
+                temp = temp.getNext();
+            }
+            temp.setNext(temp.getNext().getNext());
+            temp.getNext().getNext().setPrev(temp);
+        }
+    }
+
+    public void deleteHead(){
+        head = head.getNext();
+        head.setPrev(null);
+    }
+
     public void printList(){
         DNode temp = head;
         System.out.print("[");

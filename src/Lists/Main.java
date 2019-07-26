@@ -23,6 +23,11 @@ public class Main {
         dlinkl.add(4);
         dlinkl.addhead(0);
         dlinkl.printList();
+        dlinkl.deleteHead();
+        dlinkl.addhead(-1);
+        dlinkl.add(5);
+        dlinkl.delete(3);
+        dlinkl.printList();
 
     }
 }
