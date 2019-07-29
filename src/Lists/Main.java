@@ -1,7 +1,5 @@
 package Lists;
 
-import Lists.LinkedList_Impl;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -15,6 +13,21 @@ public class Main {
         linkl.delete("second");
         linkl.deleteHead();
         linkl.printList();
+        Node searcher = linkl.search("fifth");
+        System.out.println(searcher.getData());
+
+        //DLinkedList
+        DLinkedList_Impl dlinkl = new DLinkedList_Impl(1);
+        dlinkl.add(2);
+        dlinkl.add(3);
+        dlinkl.add(4);
+        dlinkl.addhead(0);
+        dlinkl.printList();
+        dlinkl.deleteHead();
+        dlinkl.addhead(-1);
+        dlinkl.add(5);
+        dlinkl.delete(3);
+        dlinkl.printList();
 
     }
 }
