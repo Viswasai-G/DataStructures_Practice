@@ -67,4 +67,27 @@ public class LinkedList_Impl extends Node{
         return resultnode;
     }
 
+    public void convertToCircular(){
+        Node temp = head;
+        while(temp.getNext()!=null){
+            temp = temp.getNext();
+        }
+        temp.setNext(head);
+    }
+
+    public void printCircular(){
+        Node temp = head;
+        System.out.print("[" +temp.getData() + ", ");
+        boolean complete = false;
+        while (!complete){
+            temp = temp.getNext();
+            if(temp.getNext() == head) {
+                complete = true;
+                break;
+            }
+            else System.out.print(temp.getData() +", ");
+        }
+        System.out.print(temp.getData()+"]");
+    }
+
 }

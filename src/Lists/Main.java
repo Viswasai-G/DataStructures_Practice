@@ -15,6 +15,10 @@ public class Main {
         linkl.printList();
         Node searcher = linkl.search("fifth");
         System.out.println(searcher.getData());
+        System.out.println();
+        linkl.printList();
+        linkl.convertToCircular();
+        linkl.printCircular();
 
         //DLinkedList
         DLinkedList_Impl dlinkl = new DLinkedList_Impl(1);
@@ -28,6 +32,9 @@ public class Main {
         dlinkl.add(5);
         dlinkl.delete(3);
         dlinkl.printList();
+        System.out.println();
+        dlinkl.convertToCircular();
+        dlinkl.printCircular();
 
     }
 }

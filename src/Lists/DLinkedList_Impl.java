@@ -1,6 +1,6 @@
 package Lists;
 
-public class DLinkedList_Impl extends DNode {
+public class DLinkedList_Impl extends DNode{
 
     private DNode head = new DNode();
 
@@ -57,5 +57,29 @@ public class DLinkedList_Impl extends DNode {
 
     public void setHead(DNode head) {
         this.head = head;
+    }
+
+    public void convertToCircular(){
+        DNode temp = head;
+        while(temp.getNext()!=null){
+            temp = temp.getNext();
+        }
+        temp.setNext(head);
+        head.setPrev(temp);
+    }
+
+    public void printCircular(){
+        DNode temp = head;
+        System.out.print("[" +temp.getData() + ", ");
+        boolean complete = false;
+        while (!complete){
+            temp = temp.getNext();
+            if(temp.getNext() == head) {
+                complete = true;
+                break;
+            }
+            else System.out.print(temp.getData() +", ");
+        }
+        System.out.print(temp.getData()+"]");
     }
 }
