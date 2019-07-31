@@ -1,6 +1,6 @@
 package Lists;
 
-public class DLinkedList_Impl extends DNode{
+public class DLinkedList_Impl extends DNode implements LL_interface{
 
     private DNode head = new DNode();
 
@@ -10,19 +10,23 @@ public class DLinkedList_Impl extends DNode{
         head.setPrev(null);
     }
 
-    public <T> void add(T data){
+    @Override
+    public void add(Object data) {
         DNode temp = head;
         while(temp.getNext()!=null){temp = temp.getNext();}
         DNode node = new DNode(data, null, temp);
         temp.setNext(node);
     }
 
-    public <T> void addhead(T data){
+    @Override
+    public void addHead(Object data) {
         DNode temp = head;
         head = new DNode(data, temp, null);
     }
 
-    public <T> void delete(T data){
+
+    @Override
+    public void delete(Object data) {
         DNode temp = head;
         if(temp.getData()==data){
             deleteHead();
