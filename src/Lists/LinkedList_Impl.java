@@ -1,6 +1,6 @@
 package Lists;
 
-public class LinkedList_Impl extends Node{
+public class LinkedList_Impl extends Node implements LL_interface{
 
     private Node head;
 
@@ -12,7 +12,8 @@ public class LinkedList_Impl extends Node{
         head = new Node<T>();
     }
 
-    public <T> void addToHead(T data){
+    @Override
+    public void addHead(Object data) {
         if(head.getData() == null){
             head.setData(data);
         }
@@ -23,7 +24,7 @@ public class LinkedList_Impl extends Node{
         }
     }
 
-    public <T> void addToTail(T data){
+    public void add(Object data){
         Node temp;
         temp = head;
         while(temp.getNext()!=null){
@@ -32,7 +33,7 @@ public class LinkedList_Impl extends Node{
         temp.setNext(new Node(data));
     }
 
-    public <T> void delete(T data){
+    public void delete(Object data){
         Node temp = head;
         while(temp.getNext().getData() != data){
             temp = temp.getNext();
