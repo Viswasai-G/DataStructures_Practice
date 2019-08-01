@@ -1,7 +1,5 @@
 package Arrays_Strings;
 
-import Lists.LinkedList_Impl;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("This package contains java implementations for common arrays and strings related problems.");
@@ -31,6 +29,23 @@ public class Main {
         //Shuffle Cards
         DeckofCards deckofCards = new DeckofCards();
         deckofCards.shuffle();
+
+
+        Stack_Impl<Integer> stack_ = new Stack_Impl<>();
+        stack_.push(1);
+        stack_.push(2);
+        stack_.push(3);
+        stack_.push(4);
+        System.out.println(stack_.getHead());
+        stack_.pop();
+        stack_.pop();
+        System.out.println(stack_.getLength());
+        System.out.println(stack_.getHead());
+        stack_.pop();
+        stack_.push(3);
+        System.out.println(stack_.getLength());
+        System.out.println(stack_.getHead());
+
 
     }
 
