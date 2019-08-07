@@ -6,12 +6,25 @@ import java.util.ArrayList;
 public class Tree_Impl<T> {
     private TreeNode<T> root;
 
-    public Tree_Impl(T data){
-        root.setData(data);
-        root.setParent(null);
+    public TreeNode<T> getRoot() {
+        return root;
     }
 
-    public void addrootchild(TreeNode child){
+    public void setRoot(TreeNode<T> root) {
+        this.root = root;
+    }
+
+    public Tree_Impl(T data){
+        this.root = new TreeNode(data);
+    }
+
+    public Tree_Impl(TreeNode<T> root) {
+        this.root = root;
+    }
+
+
+    public void addrootchild(T data){
+        TreeNode child = new TreeNode(data, root);
         root.addChild(child);
     }
 
@@ -21,6 +34,27 @@ public class Tree_Impl<T> {
             if(child.getData() == data){
                 children.remove(child);
                 break;
+            }
+        }
+    }
+
+//    public void addNode(TreeNode parent ,T data){
+//        if(parent == root){
+//            TreeNode newChild = new TreeNode(data);
+//            addrootchild(newChild);
+//        }
+//        else {
+//
+//        }
+//    }
+//
+
+    public void traversePrint(TreeNode node) {
+        if (node != null) {
+            System.out.print(node.getData() + " ");
+            ArrayList<TreeNode> children = node.getChildren();
+            for (TreeNode child : children) {
+                traversePrint(child);
             }
         }
     }
