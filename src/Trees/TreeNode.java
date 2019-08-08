@@ -30,6 +30,8 @@ public class TreeNode<T> {
         this.data = data;
     }
 
+    public TreeNode(){}
+
     public T getData() {
         return data;
     }

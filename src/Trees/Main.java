@@ -8,7 +8,14 @@ public class Main {
         tree_.addrootchild(2);
         tree_.addrootchild(3);
         tree_.traversePrint(tree_.getRoot());
+        System.out.println();
         tree_.deleterootChild(2);
+        tree_.traversePrint(tree_.getRoot());
+        System.out.println();
+        tree_.addNode(1, 4);
+        tree_.addNode(1,8);
+        tree_.addNode(3,6);
+        System.out.println();
         tree_.traversePrint(tree_.getRoot());
 
     }

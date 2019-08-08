@@ -38,16 +38,33 @@ public class Tree_Impl<T> {
         }
     }
 
-//    public void addNode(TreeNode parent ,T data){
-//        if(parent == root){
-//            TreeNode newChild = new TreeNode(data);
-//            addrootchild(newChild);
-//        }
-//        else {
-//
-//        }
-//    }
-//
+    public void addNode(T parentData ,T data){
+        if(parentData == root.getData()){
+            TreeNode newChild = new TreeNode(data, root);
+            root.addChild(newChild);
+        }
+        else {
+            TreeNode parentNode = find(parentData, root);
+            parentNode.addChild(new TreeNode(data, parentNode));
+        }
+    }
+
+    public TreeNode find(T findernode, TreeNode searcherNode){
+       ArrayList<TreeNode> children = searcherNode.getChildren();
+       TreeNode result = new TreeNode();
+        for(TreeNode child:children){
+            if(findernode ==child.getData()){
+                result = child;
+                break;
+            }
+            else {
+                find(findernode, child);
+            }
+
+        }
+        return result;
+    }
+
 
     public void traversePrint(TreeNode node) {
         if (node != null) {
