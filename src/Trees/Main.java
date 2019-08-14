@@ -10,12 +10,16 @@ public class Main {
         tree_.traversePrint(tree_.getRoot());
         System.out.println();
         tree_.deleterootChild(2);
+
         tree_.traversePrint(tree_.getRoot());
         System.out.println();
         tree_.addNode(1, 4);
         tree_.addNode(1,8);
         tree_.addNode(3,6);
         System.out.println();
+        tree_.deleteNode(8);
+        tree_.addNode(1,7);
+        tree_.deleteNode(6);
         tree_.traversePrint(tree_.getRoot());
 
     }

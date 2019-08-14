@@ -49,19 +49,33 @@ public class Tree_Impl<T> {
         }
     }
 
+    public void deleteNode(T data){
+        if(data == root.getData()){
+            root.setData(null);
+        }
+        else{
+            TreeNode node = find(data, root);
+            TreeNode parent = node.getParent();
+            ArrayList<TreeNode> children = parent.getChildren();
+            children.remove(node);
+            parent.setChildren(children);
+            node.setParent(null);
+        }
+    }
+
     public TreeNode find(T findernode, TreeNode searcherNode){
        ArrayList<TreeNode> children = searcherNode.getChildren();
        TreeNode result = new TreeNode();
         for(TreeNode child:children){
+            if(result.getData()==null){
             if(findernode ==child.getData()){
                 result = child;
                 break;
             }
             else {
-                find(findernode, child);
+                result = find(findernode, child);
             }
-
-        }
+        }}
         return result;
     }
 
