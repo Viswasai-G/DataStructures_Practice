@@ -24,9 +24,12 @@ public class BTree_Impl<T> {
         if(hasBoth(node)){
             BinaryTreeNode templeft = node.getLeft();
             BinaryTreeNode tempright = node.getRight();
-            findEmpty(templeft);
-            findEmpty(tempright);
-            return null;
+            BinaryTreeNode left = findEmpty(templeft);
+            BinaryTreeNode right = findEmpty(tempright);
+            if(node.getLeft() != null){
+                return left;
+            }
+            else return right;
         }
         else return node;
     }
@@ -36,5 +39,18 @@ public class BTree_Impl<T> {
             return true;
         }
         else return false;
+    }
+
+    public void printTree(BinaryTreeNode node){
+        printNode(node);
+        if(node.getLeft()!=null && node.getRight()!=null){
+            printTree(node.getLeft());
+            printTree(node.getRight());
+        }
+        else if(node.getLeft()!=null){printTree(node.getLeft());}
+    }
+
+    public void printNode(BinaryTreeNode node){
+        System.out.print(" "+node.getData());
     }
 }
